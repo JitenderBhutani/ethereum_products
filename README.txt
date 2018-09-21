@@ -1,4 +1,6 @@
-Copy Conf.ini file in /var/eth_conf/
+
+Copy Conf.ini file in /var/www/eth_auxpay_py/
+
 Create Directory : /var/log/eth_logs
 Give it 777 access
 
@@ -6,6 +8,9 @@ Create Directory for logs :
 	/var/log/eth_logs/erc_end_points/
 	/var/log/eth_logs/erc_mempool/
 	/var/log/eth_logs/erc_block/
+	/var/log/eth_logs/eth_end_points/
+	/var/log/eth_logs/eth_mempool/
+	/var/log/eth_logs/eth_block/
 	/var/log/eth_logs/hook_main/
 	/var/log/eth_logs/hook_exception/
 
@@ -16,6 +21,8 @@ Apache2 config
 sudo apt install apache2-dev
 sudo python3.6 -m pip install mod_wsgi
 ------------------------------------------------------------------------
+*Backup
+
 wsgi.py
 
 import os
@@ -29,5 +36,3 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "eth_auxpay_py.settings")
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
-
-
