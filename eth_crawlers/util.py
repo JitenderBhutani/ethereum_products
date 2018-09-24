@@ -36,8 +36,7 @@ class MyLogger():
         logging.getLogger("requests").setLevel(logging.WARNING)
         logging.getLogger("pika").setLevel(logging.CRITICAL)
         logging.getLogger("pymysql").setLevel(logging.CRITICAL)
-        self.logger = logging.getLogger()
-        self.logger.addHandler(logging.StreamHandler(sys.stdout))
+        self.logger = logging.getLogger()        
 
     def msg_logger(self,msg):
         self.logger.info(msg)
